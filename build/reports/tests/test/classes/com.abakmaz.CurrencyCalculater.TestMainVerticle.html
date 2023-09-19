@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - TestMainVerticle</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>TestMainVerticle</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.abakmaz.CurrencyCalculater.html">com.abakmaz.CurrencyCalculater</a> &gt; TestMainVerticle</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">2.296s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">verticle_deployed(Vertx, VertxTestContext)</td>
+<td class="success">2.296s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>Eyl 19, 2023 11:41:53 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate ORM core version 5.6.3.Final
+Eyl 19, 2023 11:41:54 PM org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver resolveEntity
+WARN: HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+Eyl 19, 2023 11:41:54 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;
+INFO: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+Eyl 19, 2023 11:41:54 PM org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator instantiateC3p0Provider
+WARN: HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+Eyl 19, 2023 11:41:54 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+Eyl 19, 2023 11:41:54 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/foreks]
+Eyl 19, 2023 11:41:54 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {user=postgres, password=****}
+Eyl 19, 2023 11:41:54 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: false
+Eyl 19, 2023 11:41:54 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections &lt;init&gt;
+INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
+Eyl 19, 2023 11:41:54 PM org.hibernate.dialect.Dialect &lt;init&gt;
+INFO: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+Eyl 19, 2023 11:41:55 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@53324b07] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Eyl 19, 2023 11:41:55 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Eyl 19, 2023 11:41:55 PM io.netty.channel.AbstractChannel$AbstractUnsafe register
+WARNING: Force-closing a channel whose registration task was not accepted by an event loop: [id: 0x31221c83]
+java.util.concurrent.RejectedExecutionException: event executor terminated
+	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:934)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:344)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:836)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute0(SingleThreadEventExecutor.java:827)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:817)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register(AbstractChannel.java:483)
+	at io.netty.channel.SingleThreadEventLoop.register(SingleThreadEventLoop.java:89)
+	at io.netty.channel.SingleThreadEventLoop.register(SingleThreadEventLoop.java:83)
+	at io.netty.channel.MultithreadEventLoopGroup.register(MultithreadEventLoopGroup.java:86)
+	at io.netty.bootstrap.AbstractBootstrap.initAndRegister(AbstractBootstrap.java:323)
+	at io.netty.bootstrap.AbstractBootstrap.doBind(AbstractBootstrap.java:272)
+	at io.netty.bootstrap.AbstractBootstrap.bind(AbstractBootstrap.java:268)
+	at io.vertx.core.net.impl.AsyncResolveConnectHelper.lambda$doBind$2(AsyncResolveConnectHelper.java:58)
+	at io.vertx.core.net.impl.AsyncResolveConnectHelper.doBind(AsyncResolveConnectHelper.java:71)
+	at io.vertx.core.net.impl.TCPServerBase.lambda$listen$4(TCPServerBase.java:187)
+	at io.vertx.core.impl.future.FutureImpl$3.onSuccess(FutureImpl.java:141)
+	at io.vertx.core.impl.future.FutureBase.emitSuccess(FutureBase.java:60)
+	at io.vertx.core.impl.future.FutureImpl.addListener(FutureImpl.java:196)
+	at io.vertx.core.impl.future.FutureImpl.onComplete(FutureImpl.java:164)
+	at io.vertx.core.net.impl.TCPServerBase.listen(TCPServerBase.java:167)
+	at io.vertx.core.net.impl.TCPServerBase.bind(TCPServerBase.java:109)
+	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:178)
+	at io.vertx.core.http.HttpServer.listen(HttpServer.java:169)
+	at io.vertx.core.http.HttpServer.listen(HttpServer.java:220)
+	at com.abakmaz.CurrencyCalculater.PersonService.web.CurrencyCalculaterVerticle.start(CurrencyCalculaterVerticle.java:28)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$5(DeploymentManager.java:196)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:246)
+	at io.vertx.core.impl.EventLoopContext.lambda$runOnContext$0(EventLoopContext.java:43)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+
+Eyl 19, 2023 11:41:55 PM io.netty.util.concurrent.DefaultPromise safeExecute
+SEVERE: Failed to submit a listener notification task. Event loop shut down?
+java.util.concurrent.RejectedExecutionException: event executor terminated
+	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:934)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:344)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:836)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute0(SingleThreadEventExecutor.java:827)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:817)
+	at io.netty.util.concurrent.DefaultPromise.safeExecute(DefaultPromise.java:862)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:500)
+	at io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:185)
+	at io.netty.channel.DefaultChannelPromise.addListener(DefaultChannelPromise.java:95)
+	at io.netty.channel.DefaultChannelPromise.addListener(DefaultChannelPromise.java:30)
+	at io.vertx.core.net.impl.AsyncResolveConnectHelper.lambda$doBind$2(AsyncResolveConnectHelper.java:59)
+	at io.vertx.core.net.impl.AsyncResolveConnectHelper.doBind(AsyncResolveConnectHelper.java:71)
+	at io.vertx.core.net.impl.TCPServerBase.lambda$listen$4(TCPServerBase.java:187)
+	at io.vertx.core.impl.future.FutureImpl$3.onSuccess(FutureImpl.java:141)
+	at io.vertx.core.impl.future.FutureBase.emitSuccess(FutureBase.java:60)
+	at io.vertx.core.impl.future.FutureImpl.addListener(FutureImpl.java:196)
+	at io.vertx.core.impl.future.FutureImpl.onComplete(FutureImpl.java:164)
+	at io.vertx.core.net.impl.TCPServerBase.listen(TCPServerBase.java:167)
+	at io.vertx.core.net.impl.TCPServerBase.bind(TCPServerBase.java:109)
+	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:178)
+	at io.vertx.core.http.HttpServer.listen(HttpServer.java:169)
+	at io.vertx.core.http.HttpServer.listen(HttpServer.java:220)
+	at com.abakmaz.CurrencyCalculater.PersonService.web.CurrencyCalculaterVerticle.start(CurrencyCalculaterVerticle.java:28)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$5(DeploymentManager.java:196)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:246)
+	at io.vertx.core.impl.EventLoopContext.lambda$runOnContext$0(EventLoopContext.java:43)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+
+Eyl 19, 2023 11:41:55 PM io.netty.channel.AbstractChannel$AbstractUnsafe register
+WARNING: Force-closing a channel whose registration task was not accepted by an event loop: [id: 0x31e59c15]
+java.util.concurrent.RejectedExecutionException: event executor terminated
+	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:934)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:344)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:836)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute0(SingleThreadEventExecutor.java:827)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:817)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register(AbstractChannel.java:483)
+	at io.netty.channel.SingleThreadEventLoop.register(SingleThreadEventLoop.java:89)
+	at io.netty.channel.SingleThreadEventLoop.register(SingleThreadEventLoop.java:83)
+	at io.netty.channel.MultithreadEventLoopGroup.register(MultithreadEventLoopGroup.java:86)
+	at io.netty.bootstrap.AbstractBootstrap.initAndRegister(AbstractBootstrap.java:323)
+	at io.netty.bootstrap.AbstractBootstrap.doBind(AbstractBootstrap.java:272)
+	at io.netty.bootstrap.AbstractBootstrap.bind(AbstractBootstrap.java:268)
+	at io.vertx.core.net.impl.AsyncResolveConnectHelper.lambda$doBind$2(AsyncResolveConnectHelper.java:58)
+	at io.vertx.core.net.impl.AsyncResolveConnectHelper.doBind(AsyncResolveConnectHelper.java:71)
+	at io.vertx.core.net.impl.TCPServerBase.lambda$listen$4(TCPServerBase.java:187)
+	at io.vertx.core.impl.future.FutureImpl$3.onSuccess(FutureImpl.java:141)
+	at io.vertx.core.impl.future.FutureBase.emitSuccess(FutureBase.java:60)
+	at io.vertx.core.impl.future.FutureImpl.addListener(FutureImpl.java:196)
+	at io.vertx.core.impl.future.FutureImpl.onComplete(FutureImpl.java:164)
+	at io.vertx.core.net.impl.TCPServerBase.listen(TCPServerBase.java:167)
+	at io.vertx.core.net.impl.TCPServerBase.bind(TCPServerBase.java:109)
+	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:178)
+	at io.vertx.core.http.HttpServer.listen(HttpServer.java:169)
+	at io.vertx.core.http.HttpServer.listen(HttpServer.java:220)
+	at com.abakmaz.CurrencyCalculater.PersonService.web.PersonServiceVerticle.start(PersonServiceVerticle.java:41)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$5(DeploymentManager.java:196)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:246)
+	at io.vertx.core.impl.EventLoopContext.lambda$runOnContext$0(EventLoopContext.java:43)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+
+Eyl 19, 2023 11:41:55 PM io.netty.util.concurrent.DefaultPromise safeExecute
+SEVERE: Failed to submit a listener notification task. Event loop shut down?
+java.util.concurrent.RejectedExecutionException: event executor terminated
+	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:934)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:344)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:836)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute0(SingleThreadEventExecutor.java:827)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:817)
+	at io.netty.util.concurrent.DefaultPromise.safeExecute(DefaultPromise.java:862)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:500)
+	at io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:185)
+	at io.netty.channel.DefaultChannelPromise.addListener(DefaultChannelPromise.java:95)
+	at io.netty.channel.DefaultChannelPromise.addListener(DefaultChannelPromise.java:30)
+	at io.vertx.core.net.impl.AsyncResolveConnectHelper.lambda$doBind$2(AsyncResolveConnectHelper.java:59)
+	at io.vertx.core.net.impl.AsyncResolveConnectHelper.doBind(AsyncResolveConnectHelper.java:71)
+	at io.vertx.core.net.impl.TCPServerBase.lambda$listen$4(TCPServerBase.java:187)
+	at io.vertx.core.impl.future.FutureImpl$3.onSuccess(FutureImpl.java:141)
+	at io.vertx.core.impl.future.FutureBase.emitSuccess(FutureBase.java:60)
+	at io.vertx.core.impl.future.FutureImpl.addListener(FutureImpl.java:196)
+	at io.vertx.core.impl.future.FutureImpl.onComplete(FutureImpl.java:164)
+	at io.vertx.core.net.impl.TCPServerBase.listen(TCPServerBase.java:167)
+	at io.vertx.core.net.impl.TCPServerBase.bind(TCPServerBase.java:109)
+	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:178)
+	at io.vertx.core.http.HttpServer.listen(HttpServer.java:169)
+	at io.vertx.core.http.HttpServer.listen(HttpServer.java:220)
+	at com.abakmaz.CurrencyCalculater.PersonService.web.PersonServiceVerticle.start(PersonServiceVerticle.java:41)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$5(DeploymentManager.java:196)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:246)
+	at io.vertx.core.impl.EventLoopContext.lambda$runOnContext$0(EventLoopContext.java:43)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.3.2</a> at 19.Eyl.2023 23:41:56</p>
+</div>
+</div>
+</body>
+</html>
