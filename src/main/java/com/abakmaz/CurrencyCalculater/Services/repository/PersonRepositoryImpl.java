@@ -1,6 +1,6 @@
-package com.abakmaz.CurrencyCalculater.PersonService.repository;
+package com.abakmaz.CurrencyCalculater.Services.repository;
 
-import com.abakmaz.CurrencyCalculater.PersonService.model.PersonEntity;
+import com.abakmaz.CurrencyCalculater.Services.model.PersonEntity;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

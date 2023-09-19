@@ -1,8 +1,8 @@
-package com.abakmaz.CurrencyCalculater.PersonService.web;
+package com.abakmaz.CurrencyCalculater.Services.web;
 
-import com.abakmaz.CurrencyCalculater.PersonService.model.CurrencyRequestModel;
-import com.abakmaz.CurrencyCalculater.PersonService.model.CurrencyResponseModel;
-import com.abakmaz.CurrencyCalculater.PersonService.service.CurrencyCalculaterService;
+import com.abakmaz.CurrencyCalculater.Services.model.CurrencyRequestModel;
+import com.abakmaz.CurrencyCalculater.Services.model.CurrencyResponseModel;
+import com.abakmaz.CurrencyCalculater.Services.service.CurrencyCalculaterService;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;

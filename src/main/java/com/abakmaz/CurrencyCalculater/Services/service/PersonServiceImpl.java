@@ -1,7 +1,7 @@
-package com.abakmaz.CurrencyCalculater.PersonService.service;
+package com.abakmaz.CurrencyCalculater.Services.service;
 
-import com.abakmaz.CurrencyCalculater.PersonService.model.PersonEntity;
-import com.abakmaz.CurrencyCalculater.PersonService.repository.PersonRepository;
+import com.abakmaz.CurrencyCalculater.Services.model.PersonEntity;
+import com.abakmaz.CurrencyCalculater.Services.repository.PersonRepository;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.abakmaz.CurrencyCalculater.PersonService.service;
+package com.abakmaz.CurrencyCalculater.Services.service;
 
-import com.abakmaz.CurrencyCalculater.PersonService.model.PersonEntity;
+import com.abakmaz.CurrencyCalculater.Services.model.PersonEntity;
 
 import java.util.List;
 

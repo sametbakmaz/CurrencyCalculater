@@ -1,7 +1,7 @@
-package com.abakmaz.CurrencyCalculater.PersonService.service;
+package com.abakmaz.CurrencyCalculater.Services.service;
 
-import com.abakmaz.CurrencyCalculater.PersonService.model.CurrencyRequestModel;
-import com.abakmaz.CurrencyCalculater.PersonService.model.CurrencyResponseModel;
+import com.abakmaz.CurrencyCalculater.Services.model.CurrencyRequestModel;
+import com.abakmaz.CurrencyCalculater.Services.model.CurrencyResponseModel;
 import io.vertx.core.Vertx;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonArray;

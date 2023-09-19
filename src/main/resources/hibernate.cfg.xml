@@ -27,7 +27,7 @@
     <property name="hibernate.hbm2ddl.auto">update</property>
 
     <!-- Mention annotated class -->
-    <mapping class="com.abakmaz.CurrencyCalculater.PersonService.model.PersonEntity" />
+    <mapping class="com.abakmaz.CurrencyCalculater.Services.model.PersonEntity" />
     <!-- Add more entities as needed -->
 
   </session-factory>

@@ -1,4 +1,4 @@
-package com.abakmaz.CurrencyCalculater.PersonService.model;
+package com.abakmaz.CurrencyCalculater.Services.model;
 
 import lombok.*;
 

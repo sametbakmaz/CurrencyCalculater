@@ -1,13 +1,13 @@
 package com.abakmaz.CurrencyCalculater;
 
-import com.abakmaz.CurrencyCalculater.PersonService.repository.PersonRepository;
-import com.abakmaz.CurrencyCalculater.PersonService.repository.PersonRepositoryImpl;
-import com.abakmaz.CurrencyCalculater.PersonService.service.PersonService;
-import com.abakmaz.CurrencyCalculater.PersonService.service.PersonServiceImpl;
-import com.abakmaz.CurrencyCalculater.PersonService.web.PersonServiceVerticle;
-import com.abakmaz.CurrencyCalculater.PersonService.service.CurrencyCalculaterService; // Yeni eklenen satır
-import com.abakmaz.CurrencyCalculater.PersonService.service.CurrencyCalculaterServiceImpl; // Yeni eklenen satır
-import com.abakmaz.CurrencyCalculater.PersonService.web.CurrencyCalculaterVerticle; // Yeni eklenen satır
+import com.abakmaz.CurrencyCalculater.Services.repository.PersonRepository;
+import com.abakmaz.CurrencyCalculater.Services.repository.PersonRepositoryImpl;
+import com.abakmaz.CurrencyCalculater.Services.service.PersonService;
+import com.abakmaz.CurrencyCalculater.Services.service.PersonServiceImpl;
+import com.abakmaz.CurrencyCalculater.Services.web.PersonServiceVerticle;
+import com.abakmaz.CurrencyCalculater.Services.service.CurrencyCalculaterService; // Yeni eklenen satır
+import com.abakmaz.CurrencyCalculater.Services.service.CurrencyCalculaterServiceImpl; // Yeni eklenen satır
+import com.abakmaz.CurrencyCalculater.Services.web.CurrencyCalculaterVerticle; // Yeni eklenen satır
 import io.vertx.core.AbstractVerticle;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
