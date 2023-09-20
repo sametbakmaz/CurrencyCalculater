@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.abakmaz.CurrencyCalculater.TestMainVerticle" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-19T20:41:53" hostname="DESKTOP-GDHG7BS" time="2.296">
+<testsuite name="com.abakmaz.CurrencyCalculater.TestMainVerticle" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-19T23:00:13" hostname="DESKTOP-GDHG7BS" time="2.304">
   <properties/>
-  <testcase name="verticle_deployed(Vertx, VertxTestContext)" classname="com.abakmaz.CurrencyCalculater.TestMainVerticle" time="2.296"/>
+  <testcase name="verticle_deployed(Vertx, VertxTestContext)" classname="com.abakmaz.CurrencyCalculater.TestMainVerticle" time="2.304"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Eyl 19, 2023 11:41:53 PM org.hibernate.Version logVersion
+  <system-err><![CDATA[Eyl 20, 2023 2:00:13 AM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate ORM core version 5.6.3.Final
-Eyl 19, 2023 11:41:54 PM org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver resolveEntity
+Eyl 20, 2023 2:00:13 AM org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver resolveEntity
 WARN: HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
-Eyl 19, 2023 11:41:54 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+Eyl 20, 2023 2:00:14 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
 INFO: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-Eyl 19, 2023 11:41:54 PM org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator instantiateC3p0Provider
+Eyl 20, 2023 2:00:14 AM org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator instantiateC3p0Provider
 WARN: HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
-Eyl 19, 2023 11:41:54 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Eyl 20, 2023 2:00:14 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
-Eyl 19, 2023 11:41:54 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Eyl 20, 2023 2:00:14 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/foreks]
-Eyl 19, 2023 11:41:54 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Eyl 20, 2023 2:00:14 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001001: Connection properties: {user=postgres, password=****}
-Eyl 19, 2023 11:41:54 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Eyl 20, 2023 2:00:14 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001003: Autocommit mode: false
-Eyl 19, 2023 11:41:54 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
+Eyl 20, 2023 2:00:14 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
 INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
-Eyl 19, 2023 11:41:54 PM org.hibernate.dialect.Dialect <init>
+Eyl 20, 2023 2:00:14 AM org.hibernate.dialect.Dialect <init>
 INFO: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-Eyl 19, 2023 11:41:55 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+Eyl 20, 2023 2:00:15 AM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
 INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@53324b07] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-Eyl 19, 2023 11:41:55 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+Eyl 20, 2023 2:00:15 AM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
 INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-Eyl 19, 2023 11:41:55 PM io.netty.channel.AbstractChannel$AbstractUnsafe register
-WARNING: Force-closing a channel whose registration task was not accepted by an event loop: [id: 0x31221c83]
+Eyl 20, 2023 2:00:15 AM io.netty.channel.AbstractChannel$AbstractUnsafe register
+WARNING: Force-closing a channel whose registration task was not accepted by an event loop: [id: 0x351a1a1f]
 java.util.concurrent.RejectedExecutionException: event executor terminated
 	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:934)
 	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:351)
@@ -55,7 +55,7 @@ java.util.concurrent.RejectedExecutionException: event executor terminated
 	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:178)
 	at io.vertx.core.http.HttpServer.listen(HttpServer.java:169)
 	at io.vertx.core.http.HttpServer.listen(HttpServer.java:220)
-	at com.abakmaz.CurrencyCalculater.PersonService.web.CurrencyCalculaterVerticle.start(CurrencyCalculaterVerticle.java:28)
+	at com.abakmaz.CurrencyCalculater.Services.web.PersonServiceVerticle.start(PersonServiceVerticle.java:40)
 	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
 	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$5(DeploymentManager.java:196)
 	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
@@ -70,7 +70,7 @@ java.util.concurrent.RejectedExecutionException: event executor terminated
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.lang.Thread.run(Thread.java:750)
 
-Eyl 19, 2023 11:41:55 PM io.netty.util.concurrent.DefaultPromise safeExecute
+Eyl 20, 2023 2:00:15 AM io.netty.util.concurrent.DefaultPromise safeExecute
 SEVERE: Failed to submit a listener notification task. Event loop shut down?
 java.util.concurrent.RejectedExecutionException: event executor terminated
 	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:934)
@@ -96,7 +96,7 @@ java.util.concurrent.RejectedExecutionException: event executor terminated
 	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:178)
 	at io.vertx.core.http.HttpServer.listen(HttpServer.java:169)
 	at io.vertx.core.http.HttpServer.listen(HttpServer.java:220)
-	at com.abakmaz.CurrencyCalculater.PersonService.web.CurrencyCalculaterVerticle.start(CurrencyCalculaterVerticle.java:28)
+	at com.abakmaz.CurrencyCalculater.Services.web.PersonServiceVerticle.start(PersonServiceVerticle.java:40)
 	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
 	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$5(DeploymentManager.java:196)
 	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
@@ -111,8 +111,8 @@ java.util.concurrent.RejectedExecutionException: event executor terminated
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.lang.Thread.run(Thread.java:750)
 
-Eyl 19, 2023 11:41:55 PM io.netty.channel.AbstractChannel$AbstractUnsafe register
-WARNING: Force-closing a channel whose registration task was not accepted by an event loop: [id: 0x31e59c15]
+Eyl 20, 2023 2:00:15 AM io.netty.channel.AbstractChannel$AbstractUnsafe register
+WARNING: Force-closing a channel whose registration task was not accepted by an event loop: [id: 0xd2c7f7b7]
 java.util.concurrent.RejectedExecutionException: event executor terminated
 	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:934)
 	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:351)
@@ -139,7 +139,7 @@ java.util.concurrent.RejectedExecutionException: event executor terminated
 	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:178)
 	at io.vertx.core.http.HttpServer.listen(HttpServer.java:169)
 	at io.vertx.core.http.HttpServer.listen(HttpServer.java:220)
-	at com.abakmaz.CurrencyCalculater.PersonService.web.PersonServiceVerticle.start(PersonServiceVerticle.java:41)
+	at com.abakmaz.CurrencyCalculater.Services.web.CurrencyCalculaterVerticle.start(CurrencyCalculaterVerticle.java:28)
 	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
 	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$5(DeploymentManager.java:196)
 	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
@@ -154,7 +154,7 @@ java.util.concurrent.RejectedExecutionException: event executor terminated
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.lang.Thread.run(Thread.java:750)
 
-Eyl 19, 2023 11:41:55 PM io.netty.util.concurrent.DefaultPromise safeExecute
+Eyl 20, 2023 2:00:15 AM io.netty.util.concurrent.DefaultPromise safeExecute
 SEVERE: Failed to submit a listener notification task. Event loop shut down?
 java.util.concurrent.RejectedExecutionException: event executor terminated
 	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:934)
@@ -180,7 +180,7 @@ java.util.concurrent.RejectedExecutionException: event executor terminated
 	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:178)
 	at io.vertx.core.http.HttpServer.listen(HttpServer.java:169)
 	at io.vertx.core.http.HttpServer.listen(HttpServer.java:220)
-	at com.abakmaz.CurrencyCalculater.PersonService.web.PersonServiceVerticle.start(PersonServiceVerticle.java:41)
+	at com.abakmaz.CurrencyCalculater.Services.web.CurrencyCalculaterVerticle.start(CurrencyCalculaterVerticle.java:28)
 	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
 	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$5(DeploymentManager.java:196)
 	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)

@@ -25,13 +25,12 @@ public class CurrencyCalculaterVerticle extends AbstractVerticle {
 
     vertx.createHttpServer()
       .requestHandler(router)
-      .listen(7004);
+      .listen(7006);
     currencyService.cacheConversionRates(vertx);
   }
 
   private void handleGetCurrency(RoutingContext routingContext) {
     CurrencyRequestModel currencyRequestModel = new CurrencyRequestModel();
-
     currencyRequestModel.setAmount(Long.parseLong(routingContext.request().getParam("amount")));
     currencyRequestModel.setFrom(routingContext.request().getParam("from"));
     currencyRequestModel.setTo(routingContext.request().getParam("to"));

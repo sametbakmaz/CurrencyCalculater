@@ -94,10 +94,10 @@ public class CurrencyCalculaterServiceImpl implements CurrencyCalculaterService 
     Double conversionRate = conversionRatesCache.get(base+target);
 
     if (conversionRate == null ) {
-      conversionRate = 1 / conversionRatesCache.get(target+base);
+      return 1 / conversionRatesCache.get(target+base);
     }
 
-    return conversionRate;
+    return conversionRatesCache.get(base+target);
   }
 
   public Double calculateExchangeRate(String baseCurrency, String targetCurrency) {
