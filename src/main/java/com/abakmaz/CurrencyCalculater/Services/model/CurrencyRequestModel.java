@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @RequiredArgsConstructor
 public class CurrencyRequestModel {
-  private String token;
+
   private long amount;
   private String from;
   private String to;
