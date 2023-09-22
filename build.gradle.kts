@@ -36,8 +36,6 @@ dependencies {
   testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
   compileOnly("org.projectlombok:lombok:1.18.22")
   annotationProcessor("org.projectlombok:lombok:1.18.22")
-  implementation ("org.hibernate:hibernate-core:5.6.3.Final")
-  implementation ("org.postgresql:postgresql:42.2.27")
   implementation ("com.fasterxml.jackson.core:jackson-databind:2.12.7.1")
 }
 

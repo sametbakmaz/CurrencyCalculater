@@ -78,13 +78,11 @@ public class CurrencyCalculaterServiceImpl implements CurrencyCalculaterService 
         throw new RuntimeException("Error occurred during calculation: " + e.getMessage());
       }
     } else {
-
       double convertedAmount = Math.round(conversionRate * requestModel.getAmount() * 100000.0) / 100000.0;
       return new CurrencyResponseModel(convertedAmount, to);
     }
   }
   private Double getConversionRate(String base, String target) {
-/*    Double conversionRate = null;*/
     if(conversionRatesCache.get(base+target)!=null){
       return conversionRatesCache.get(base+target);
     }
