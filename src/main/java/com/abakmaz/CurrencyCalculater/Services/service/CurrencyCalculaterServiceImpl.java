@@ -12,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @RequiredArgsConstructor
 public class CurrencyCalculaterServiceImpl implements CurrencyCalculaterService {
@@ -25,43 +24,39 @@ public class CurrencyCalculaterServiceImpl implements CurrencyCalculaterService 
 
     String authorizationHeader = "Basic c2FtZXRia216VGVzdDoxMjM0NTY=";
 
-    AtomicInteger counter = new AtomicInteger(0);
+    String url = "https://service.foreks.com/feed/snapshot/?f=Code%2CLast&Code="
+      + String.join("&Code=", currencyPairs);
 
-    for (String currencyPair : currencyPairs) {
-      vertx.setTimer(15000 * counter.incrementAndGet(), timerId -> {
-        String url = String.format("https://service.foreks.com/feed/snapshot/?f=Code%%2CLast&Code=%s", currencyPair);
-
-        client.getAbs(url)
-          .ssl(true)
-          .putHeader("Authorization", authorizationHeader)
-          .send(ar -> {
-            if (ar.succeeded()) {
-              HttpResponse<Buffer> response = ar.result();
-              String responseBody = response.bodyAsString();
-              System.out.println(responseBody);
-              try {
-                JsonArray jsonArray = new JsonArray(responseBody);
-                for (Object obj : jsonArray) {
-                  if (obj instanceof JsonObject) {
-                    JsonObject json = (JsonObject) obj;
-                    double conversionRate = json.getDouble("Last");
-                    String code = json.getString("Code");
-                    conversionRatesCache.put(code, conversionRate);
-                  }
-                }
-              } catch (Exception e) {
-                System.out.println("An error occurred while caching conversion rates: " + e.getMessage());
+    client.getAbs(url)
+      .ssl(true)
+      .putHeader("Authorization", authorizationHeader)
+      .send(ar -> {
+        if (ar.succeeded()) {
+          HttpResponse<Buffer> response = ar.result();
+          String responseBody = response.bodyAsString();
+          System.out.println(responseBody);
+          try {
+            JsonArray jsonArray = new JsonArray(responseBody);
+            for (Object obj : jsonArray) {
+              if (obj instanceof JsonObject) {
+                JsonObject json = (JsonObject) obj;
+                double conversionRate = json.getDouble("Last");
+                String code = json.getString("Code");
+                conversionRatesCache.put(code, conversionRate);
               }
-            } else {
-              System.out.println("Failed to fetch conversion rates: " + ar.cause().getMessage());
             }
-          });
-      });
-    }
+          } catch (Exception e) {
+            System.out.println("An error occurred while caching conversion rates: " + e.getMessage());
+          }
+        } else {
+          System.out.println("Failed to fetch conversion rates: " + ar.cause().getMessage());
+        }
 
-    vertx.setTimer(180000, timerId -> {
-      cacheConversionRates(vertx);
-    });
+        vertx.setTimer(90000, timerId -> {
+          cacheConversionRates(vertx);
+        });
+      });
+
   }
 
   public CurrencyResponseModel calculateCurrency(CurrencyRequestModel requestModel) {
@@ -76,8 +71,6 @@ public class CurrencyCalculaterServiceImpl implements CurrencyCalculaterService 
         if (exchangeRate == null) {
           throw new RuntimeException("Conversion rate not available");
         }
-
-
         double convertedAmount = Math.round(exchangeRate * requestModel.getAmount() * 100000.0) / 100000.0;
         return new CurrencyResponseModel(convertedAmount, to);
 
@@ -91,32 +84,51 @@ public class CurrencyCalculaterServiceImpl implements CurrencyCalculaterService 
     }
   }
   private Double getConversionRate(String base, String target) {
-    Double conversionRate = conversionRatesCache.get(base+target);
-
-    if (conversionRate == null ) {
+/*    Double conversionRate = null;*/
+    if(conversionRatesCache.get(base+target)!=null){
+      return conversionRatesCache.get(base+target);
+    }
+    if (conversionRatesCache.get(target+base)!=null ) {
       return 1 / conversionRatesCache.get(target+base);
     }
 
-    return conversionRatesCache.get(base+target);
+    return null;
   }
-
   public Double calculateExchangeRate(String baseCurrency, String targetCurrency) {
-    Double baseToUSDRate = conversionRatesCache.getOrDefault(baseCurrency + "USD", null);
-    Double targetToUSDRate = conversionRatesCache.getOrDefault(targetCurrency + "USD", null);
+    Double thirdCurrencyRate = null;
+    Double targetInThirdCurrencyRate = null;
+    if (conversionRatesCache.containsKey(baseCurrency + "USD")) {
 
-    Double baseToTargetRate = conversionRatesCache.getOrDefault("USD" + targetCurrency, null);
-    Double targetToBaseRate = conversionRatesCache.getOrDefault("USD" + baseCurrency, null);
-
-    if (baseToUSDRate != null && targetToUSDRate != null) {
-      return Math.round((targetToUSDRate / baseToUSDRate) * 100000.0) / 100000.0;
-    } else if (baseToUSDRate != null && baseToTargetRate != null) {
-      return Math.round((baseToTargetRate / baseToUSDRate) * 100000.0) / 100000.0;
-    } else if (targetToBaseRate != null && targetToUSDRate != null) {
-      return Math.round((targetToBaseRate / targetToUSDRate) * 100000.0) / 100000.0;
-    } else if (targetToBaseRate != null && baseToUSDRate != null) {
-      return Math.round((baseToUSDRate / targetToBaseRate) * 100000.0) / 100000.0;
+      thirdCurrencyRate = conversionRatesCache.get(baseCurrency + "USD");
+      if (conversionRatesCache.containsKey(targetCurrency + "USD")) {
+        targetInThirdCurrencyRate = conversionRatesCache.get(targetCurrency + "USD");
+        return Math.round((thirdCurrencyRate  / targetInThirdCurrencyRate) * 100000.0) / 100000.0;
+      }
     }
 
+    if (conversionRatesCache.containsKey(baseCurrency + "USD")) {
+      thirdCurrencyRate = 1 / conversionRatesCache.get(baseCurrency + "USD");
+      if (conversionRatesCache.containsKey("USD" + targetCurrency)) {
+        targetInThirdCurrencyRate = conversionRatesCache.get("USD" + targetCurrency);
+        return Math.round((targetInThirdCurrencyRate/thirdCurrencyRate  ) * 100000.0) / 100000.0;
+      }
+    }
+
+    if (conversionRatesCache.containsKey("USD" + baseCurrency)) {
+      thirdCurrencyRate = 1 / conversionRatesCache.get("USD" + baseCurrency);
+      if(conversionRatesCache.containsKey(targetCurrency + "USD")){
+        targetInThirdCurrencyRate = conversionRatesCache.get(targetCurrency + "USD");
+        return Math.round((thirdCurrencyRate / targetInThirdCurrencyRate) * 100000.0) / 100000.0;
+      }
+    }
+
+    if (conversionRatesCache.containsKey("USD" + baseCurrency)) {
+      thirdCurrencyRate = conversionRatesCache.get("USD" + baseCurrency);
+      if(conversionRatesCache.containsKey("USD" + targetCurrency)){
+        targetInThirdCurrencyRate = conversionRatesCache.get("USD" + targetCurrency);
+        return Math.round((targetInThirdCurrencyRate / thirdCurrencyRate ) * 100000.0) / 100000.0;
+      }
+    }
     return null;
   }
 }

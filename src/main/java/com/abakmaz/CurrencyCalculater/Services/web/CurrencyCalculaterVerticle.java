@@ -25,7 +25,7 @@ public class CurrencyCalculaterVerticle extends AbstractVerticle {
 
     vertx.createHttpServer()
       .requestHandler(router)
-      .listen(7006);
+      .listen(7010);
     currencyService.cacheConversionRates(vertx);
   }
 
